@@ -1,23 +1,32 @@
 "use client";
-import Image from "next/image";
 import snackAPI from "@/utils/axiosinstance";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import SnackCard from "@/components/SnackCard";
+
 export default function Home() {
+  const [snacks, setSnacks] = useState([]);
+
   useEffect(() => {
     snackAPI
       .get("/snacks")
       .then((response) => {
         console.log(response.data);
+        setSnacks(response.data);
       })
       .catch((error) => {
         console.error("Error fetching snacks:", error);
       });
+
+    return () => {
+      console.log("Cleanup");
+    };
   }, []);
 
   return (
     <div>
-      <h1>Snacks List</h1>
-      {/* UI for displaying snacks */}
+      {snacks.map((data, index) => (
+        <SnackCard key={data.id} snack={data} />
+      ))}
     </div>
   );
 }
