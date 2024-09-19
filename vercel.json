@@ -1,0 +1,15 @@
+{
+    "functions": {
+      "api/*": {
+        "runtime": "nodejs18.x",
+        "excludeFiles": ".next/**"
+      }
+    },
+    "build": {
+      "env": {
+        "NEXT_PUBLIC_SNACK_API_URL": "@next_public_snack_api_url",
+        "NEXT_PUBLIC_SNACK_API_KEY": "@next_public_snack_api_key"
+      }
+    }
+  }
+  
