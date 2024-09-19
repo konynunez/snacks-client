@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useState, useEffect, useContext } from "react";
-import snackAPI from "@/utils/axiosinstance";
+import snackAPI from "@/utils/axiosInstance";
 // create the context
 const snackContext = createContext();
 
