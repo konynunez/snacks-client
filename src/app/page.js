@@ -1,5 +1,5 @@
 "use client";
-import snackAPI from "@/utils/axiosInstance";
+import snackAPI from "@utils/axiosInstance";
 import { useEffect, useState } from "react";
 import SnackCard from "@/components/SnackCard";
 
