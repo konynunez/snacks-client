@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "snacks-client",
-  description: "Client(frontend) for snacks server (backend)",
+  description: "client (frontend) for snacks server (backend)",
 };
 
 export default function RootLayout({ children }) {
