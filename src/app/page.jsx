@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import snackAPI from "@/utils/axiosInstance";
 import SnackCard from "@/components/SnackCard";
 import { useSnacks } from "@/contexts/snackContext";
