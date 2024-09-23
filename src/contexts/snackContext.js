@@ -2,10 +2,10 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import snackAPI from "../utils/axiosinstance";
 
-// create the context
+// Create the context
 const snackContext = createContext();
 
-// provide the context
+// Provide the context
 export const SnackProvider = ({ children }) => {
   const [snacks, setSnacks] = useState([]);
 
@@ -15,6 +15,7 @@ export const SnackProvider = ({ children }) => {
       setSnacks(response.data);
     });
 
+    // Cleanup function
     return () => {
       console.log("Cleanup");
     };
@@ -25,5 +26,5 @@ export const SnackProvider = ({ children }) => {
   );
 };
 
-// export custom hook to use our context
+// Export custom hook to use our context
 export const useSnacks = () => useContext(snackContext);
